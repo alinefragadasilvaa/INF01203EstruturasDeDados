@@ -5,7 +5,7 @@
 
 /*********************** CAMINHAMENTOS ABP ***********************/
 
-void preFichaveadoEsqABP(NodoABP *a){
+void preFixadoEsqABP(NodoABP *a){
     if (a!= NULL){
         printf("%d\n",a->chave);
         preFichaveadoEsq(a->esq);
@@ -13,7 +13,7 @@ void preFichaveadoEsqABP(NodoABP *a){
     }
 }
 
-void preFichaveadoDirABP(NodoABP *a){
+void preFixadoDirABP(NodoABP *a){
     if (a!= NULL){
         printf("%d\n",a->chave);
         preFichaveadoDir(a->dir);
@@ -37,7 +37,7 @@ void centralDirABP(NodoABP *a){
     }
 }
 
-void posFichaveadoEsqABP(NodoABP *a){
+void posFixadoEsqABP(NodoABP *a){
     if (a!= NULL){
         posFichaveadoEsq(a->esq);
         posFichaveadoEsq(a->dir);
@@ -45,7 +45,7 @@ void posFichaveadoEsqABP(NodoABP *a){
     }
 }
 
-void posFichaveadoDirABP(NodoABP *a){
+void posFixadoDirABP(NodoABP *a){
     if (a!= NULL){
         posFichaveadoDir(a->dir);
         posFichaveadoDir(a->esq);
@@ -190,7 +190,7 @@ int calculaFatorArvoreABP(NodoABP *a){
 
 /*********************** CAMINHAMENTOS AVL ***********************/
 
-void preFichaveadoEsqAVL(NodoAVL *a){
+void preFixadoEsqAVL(NodoAVL *a){
     if (a!= NULL){
         printf("%d\n",a->chave);
         preFichaveadoEsq(a->esq);
@@ -198,7 +198,7 @@ void preFichaveadoEsqAVL(NodoAVL *a){
     }
 }
 
-void preFichaveadoDirAVL(NodoAVL *a){
+void preFixadoDirAVL(NodoAVL *a){
     if (a!= NULL){
         printf("%d\n",a->chave);
         preFichaveadoDir(a->dir);
@@ -222,7 +222,7 @@ void centralDirAVL(NodoAVL *a){
     }
 }
 
-void posFichaveadoEsqAVL(NodoAVL *a){
+void posFixadoEsqAVL(NodoAVL *a){
     if (a!= NULL){
         posFichaveadoEsq(a->esq);
         posFichaveadoEsq(a->dir);
@@ -230,7 +230,7 @@ void posFichaveadoEsqAVL(NodoAVL *a){
     }
 }
 
-void posFichaveadoDirAVL(NodoAVL *a){
+void posFixadoDirAVL(NodoAVL *a){
     if (a!= NULL){
         posFichaveadoDir(a->dir);
         posFichaveadoDir(a->esq);
