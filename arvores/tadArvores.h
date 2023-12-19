@@ -4,8 +4,8 @@ typedef int Chave;
 
 typedef struct NodoABP{
     Chave chave;
-    struct Nodo *esq;
-    struct Nodo *dir;
+    struct NodoABP *esq;
+    struct NodoABP *dir;
 }NodoABP;
 
 /*********************** AVL ESTRUTURA ***********************/
