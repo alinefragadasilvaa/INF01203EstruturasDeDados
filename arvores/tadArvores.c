@@ -5,7 +5,7 @@
 
 /*********************** CAMINHAMENTOS ABP ***********************/
 
-void preFichaveadoEsq(NodoABP *a){
+void preFichaveadoEsqABP(NodoABP *a){
     if (a!= NULL){
         printf("%d\n",a->chave);
         preFichaveadoEsq(a->esq);
@@ -13,7 +13,7 @@ void preFichaveadoEsq(NodoABP *a){
     }
 }
 
-void preFichaveadoDir(NodoABP *a){
+void preFichaveadoDirABP(NodoABP *a){
     if (a!= NULL){
         printf("%d\n",a->chave);
         preFichaveadoDir(a->dir);
@@ -21,7 +21,7 @@ void preFichaveadoDir(NodoABP *a){
     }
 }
 
-void centralEsq(NodoABP *a){
+void centralEsqABP(NodoABP *a){
     if (a!= NULL){
         centralEsq(a->esq);
         printf("%d\n",a->chave);
@@ -29,7 +29,7 @@ void centralEsq(NodoABP *a){
     }
 }
 
-void centralDir(NodoABP *a){
+void centralDirABP(NodoABP *a){
     if (a!= NULL){
         centralDir(a->dir);
         printf("%d\n",a->chave);
@@ -37,7 +37,7 @@ void centralDir(NodoABP *a){
     }
 }
 
-void posFichaveadoEsq(NodoABP *a){
+void posFichaveadoEsqABP(NodoABP *a){
     if (a!= NULL){
         posFichaveadoEsq(a->esq);
         posFichaveadoEsq(a->dir);
@@ -45,7 +45,7 @@ void posFichaveadoEsq(NodoABP *a){
     }
 }
 
-void posFichaveadoDir(NodoABP *a){
+void posFichaveadoDirABP(NodoABP *a){
     if (a!= NULL){
         posFichaveadoDir(a->dir);
         posFichaveadoDir(a->esq);
@@ -53,7 +53,7 @@ void posFichaveadoDir(NodoABP *a){
     }
 }
 
-void ImprimePreFichaveadoEsq(NodoABP *a, int nivel){ // considera os níveis
+void ImprimePreFichaveadoEsqABP(NodoABP *a, int nivel){ // considera os níveis
     if (a!= NULL){
         for(int i=0; i<nivel;i++){
             printf("=");
@@ -66,11 +66,11 @@ void ImprimePreFichaveadoEsq(NodoABP *a, int nivel){ // considera os níveis
 
 /*********************** ABP OPERAÇÕES ***********************/
 
-NodoABP* cria(){
+NodoABP* criaABP(){
     return NULL;
 }
 
-NodoABP* consulta(NodoABP *a, Chave chave) { // retorna nulo se não encontra a chave de consulta
+NodoABP* consultaABP(NodoABP *a, Chave chave) { // retorna nulo se não encontra a chave de consulta
     if (a==NULL)
         return NULL;
     else if (a->chave == chave)
@@ -82,7 +82,7 @@ NodoABP* consulta(NodoABP *a, Chave chave) { // retorna nulo se não encontra a 
             return consulta(a->dir,chave);
 } 
 
-NodoABP* insere(NodoABP *a, Chave chave){
+NodoABP* insereABP(NodoABP *a, Chave chave){
     if (a == NULL){ // raiz é nula
         a = (NodoABP*) malloc(sizeof(NodoABP));
         a->chave = chave;
@@ -98,7 +98,7 @@ NodoABP* insere(NodoABP *a, Chave chave){
     return a;
 }
 
-NodoABP* maior( NodoABP* a){ // auxiliar da remove
+NodoABP* maiorABP( NodoABP* a){ // auxiliar da remove
     if(a != NULL)
         while(a->dir != NULL)
             a = a->dir;
@@ -106,7 +106,7 @@ NodoABP* maior( NodoABP* a){ // auxiliar da remove
     return a;
 }
 
-NodoABP* remove(Chave chave, NodoABP* a){
+NodoABP* removeABP(Chave chave, NodoABP* a){ 
     NodoABP* TmpCell;
 
     if(a == NULL)
@@ -136,7 +136,7 @@ NodoABP* remove(Chave chave, NodoABP* a){
     return a;
 }
 
-int contaNodo(NodoABP  *a){
+int contaNodoABP(NodoABP  *a){
     if (a == NULL)
         return 0;
     else
@@ -144,7 +144,7 @@ int contaNodo(NodoABP  *a){
 
 }
 
-int altura(NodoABP *a){
+int alturaABP(NodoABP *a){
     int altEsq, altDir;
     if (a == NULL)
         return 0;
@@ -158,7 +158,7 @@ int altura(NodoABP *a){
     }
 }
 
-int calculaFatorNodo(NodoABP *a){
+int calculaFatorNodoABP(NodoABP *a){
     if(a==NULL){
         return 0;
     } else{
@@ -167,7 +167,7 @@ int calculaFatorNodo(NodoABP *a){
 
 }
 
-void calculaFatorArvoreAux(NodoABP *a, int *fatorArvore){
+void calculaFatorArvoreAuxABP(NodoABP *a, int *fatorArvore){
     if(a==NULL){
         return;
     }else {
@@ -182,7 +182,7 @@ void calculaFatorArvoreAux(NodoABP *a, int *fatorArvore){
 
 }
 
-int calculaFatorArvore(NodoABP *a){
+int calculaFatorArvoreABP(NodoABP *a){
     int fatorArvore=0;
     calculaFatorArvoreAuchave(a, &fatorArvore);
     return fatorArvore;
